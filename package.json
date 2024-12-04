@@ -1,0 +1,102 @@
+{
+  "name": "template_api",
+  "version": "1.0.0",
+  "description": "Template basic",
+  "author": "Cintia Masumi Nomura",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run migration:run && node build/src/index.js",
+    "build": "tsc",
+    "sonar": "",
+    "dev": "concurrently \"nodemon\"",
+    "test": "",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "migration:run": "npm run typeorm migration:run",
+    "migration:create": "npm run typeorm migration:create -- -n",
+    "migration:revert": "npm run typeorm migration:revert",
+    "eslint:fix": "eslint --fix .",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "commit": "git-cz"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run eslint:fix"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts, json",
+    "exec": "ts-node src/main.ts"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@eslint/js": "^9.15.0",
+    "@stylistic/eslint-plugin-js": "^2.10.1",
+    "@stylistic/eslint-plugin-ts": "^2.10.1",
+    "@types/axios": "^0.14.4",
+    "@types/express": "^5.0.0",
+    "@types/faker": "^6.6.11",
+    "@types/jest": "^29.5.14",
+    "@types/joi": "^17.2.3",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.9.0",
+    "@types/node-fetch": "^3.0.3",
+    "@types/supertest": "^6.0.2",
+    "@types/swagger-ui-express": "^4.1.7",
+    "@types/uuid": "^10.0.0",
+    "@types/validator": "^13.12.2",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "commitizen": "^4.3.1",
+    "concurrently": "^9.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.15.0",
+    "faker": "^6.6.6",
+    "globals": "^15.12.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0"
+  },
+  "dependencies": {
+    "@elastic/ecs-morgan-format": "^1.5.1",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-validator": "^7.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "pg": "^8.13.1",
+    "reflect-metadata": "^0.2.2",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.20",
+    "typeorm-pagination": "^2.0.3",
+    "uuid": "^11.0.3",
+    "uuidv4": "^6.2.13",
+    "validator": "^13.12.0"
+  },
+  "cli": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
