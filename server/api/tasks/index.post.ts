@@ -1,17 +1,21 @@
-import { defineEventHandler, readBody } from 'h3';
-import Task from '../../db/models/task';
+import { defineEventHandler, readBody, setResponseStatus } from 'h3';
+import { createTask } from '@/server/useCase/tasks/create-task';
 
 export default defineEventHandler(async (event) => {
-  const body = await readBody(event)
 
   try {
-    const task = await Task.create(body);
+    const body = await readBody(event)
+    const task = await createTask(body)  
+
+    setResponseStatus(event,201)
     return { status: 'Task created', task }
   } catch (error) {
 
     if( error instanceof Error){
+      setResponseStatus(event,400)
         return { error: error.message }
     }
+    setResponseStatus(event,500)
     return {error: 'Unkown error occurred'}
   }
 })
