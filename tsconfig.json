@@ -5,6 +5,13 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "types": ["@nuxt/types"]
-  }
+    "types": ["@nuxt/types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+  },
+  "include": ["server/**/*.ts"]
 }
