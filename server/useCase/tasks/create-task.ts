@@ -12,13 +12,11 @@ export const createTask = async (data: CreateTaskInput) => {
     if(!data.due_date || new Date(data.due_date) < new Date()){
         throw new Error(' A data de vencimento deve ser no futuro')
     }
-
     const task = await Task.create({
         title: data.title,
         description: data.description || '',
-        due_data: data.due_date,
+        due_date: data.due_date,
         status: 'Pendente'
     })
-    
     return task
 }

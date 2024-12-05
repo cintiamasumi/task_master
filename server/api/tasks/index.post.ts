@@ -2,11 +2,13 @@ import { defineEventHandler, readBody, setResponseStatus } from 'h3';
 import { createTask } from '@/server/useCase/tasks/create-task';
 
 export default defineEventHandler(async (event) => {
-
+  
+  const body = await readBody(event)
+  console.log(body)
   try {
-    const body = await readBody(event)
+    
     const task = await createTask(body)  
-
+    console.log(task)
     setResponseStatus(event,201)
     return { status: 'Task created', task }
   } catch (error) {

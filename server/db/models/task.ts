@@ -16,7 +16,7 @@ const Task = sequelize.define('Task', {
   status: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: 'pendente',
+    defaultValue: 'Pendente',
   },
 });
 
