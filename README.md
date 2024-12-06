@@ -126,7 +126,7 @@ O **Task Master** é uma aplicação full-stack simples para gerenciamento de ta
   PUT localhost:3000/api/tasks
   Json: {
     "id": 1,
-    "status": "concluido"
+    "status": "Concluida"
   }
   ```
 - ** Deletar Tarefa**
