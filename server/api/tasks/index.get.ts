@@ -3,7 +3,12 @@ import Task from '../../db/models/task'
 
 export default defineEventHandler(async (event) => {
   try {
-    const tasks = await Task.findAll()
+    const tasks = await Task.findAll({
+      where: {
+        deleted_at: null
+      }
+    })
+    
     setResponseStatus(event,200)
     return { tasks }
   } catch (error) {
