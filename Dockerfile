@@ -15,4 +15,5 @@ COPY --from=builder /app ./
 
 # Expõe a porta para o Nuxt
 EXPOSE 3000
+CMD ["npm", "run", "migration:run"]
 CMD ["npm", "run", "dev"]

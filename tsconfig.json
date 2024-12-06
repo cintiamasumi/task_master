@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2016",
     "module": "commonjs",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "es2020",
     "strict": true,
-    "types": ["@nuxt/types"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    },
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
+    }
   },
-  "include": ["server/**/*.ts"]
+  "include": [
+    "server/db/migrations/**/*.ts",
+    "server/db/models/**/*.ts",
+    "server/**/*.ts"
+  ]
 }
