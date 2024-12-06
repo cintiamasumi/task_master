@@ -10,15 +10,15 @@ jest.mock("@/server/db", () => ({
 
 describe("createTask", () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-    });
+        jest.clearAllMocks()
+    })
 
     it("should throw an error if title is missing", async () => {
         
         const input: any = {
             description: "Descrição de teste",
             due_date: new Date(new Date().getTime() + 1000 * 60 * 60), // 1 hora no futuro
-        };
+        }
 
         await expect(createTask(input)).rejects.toThrow("O titulo é obrigatório");
     });
