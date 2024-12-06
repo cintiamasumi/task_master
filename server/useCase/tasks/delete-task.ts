@@ -11,7 +11,7 @@ export const deleteTask = async (data: DeleteTask) => {
         throw new Error('Tarefa não encontrada')
     }
 
-    await task.update({deleted_at: new Date()}, {where: {
+    await task.update({deletedAt: new Date()}, {where: {
         id: data.id
     }})
 
