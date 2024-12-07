@@ -141,7 +141,9 @@ O **Task Master** é uma aplicação full-stack simples para gerenciamento de ta
 - **`pages/`**: Contém as páginas da aplicação.
 - **`server/api/`**: Contém as rotas e controladores da API.
 - **`server/models/`**: Modelos Sequelize para a interação com o banco de dados.
-- ~~**`components/`**: Componentes reutilizáveis da interface.~~
+- **`components/`**: Componentes reutilizáveis da interface.
+- **`libs/utils`**: Bibliotecas 
+- **`styles/`**: Estilização de css
 - ~~**`assets/`**: Arquivos estáticos como imagens e estilos globais.~~
 
 
@@ -152,10 +154,3 @@ O **Task Master** é uma aplicação full-stack simples para gerenciamento de ta
 - A manipulação de datas é feita para suportar fuso horário local, melhorando a experiência do usuário.
 - Para garantir a qualidade do código, foi utilizado Husky para pre-commit hooks e convenções de commit.
 
----
-
-## Próximos Passos
-- Implementar autenticação de usuários.
-- Adicionar testes automatizados para garantir a confiabilidade do sistema.
-- Implementar Interface
----
